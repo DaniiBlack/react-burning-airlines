@@ -5,7 +5,7 @@ class BurningAirlines extends Component {
 
   // Load this from the Rails App with a login form
   state = {
-    loggedIn: false,
+    loggedIn: true,
     firstName: 'Test',
     lastName: 'User',
     isAdmin: false
