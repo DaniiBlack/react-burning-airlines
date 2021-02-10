@@ -14,7 +14,8 @@ import Search from './Search.jsx';
 
 class Nav extends Component {
   render() {
-    return(
+    const links = navLinks(this.props.isAdmin, this.props.firstName);
+    return (
       <Router>
         <div className="App">
           <nav className="App-nav">
@@ -22,15 +23,7 @@ class Nav extends Component {
               <li>
                 <Link to="/">Home</Link>
               </li>
-              <li>
-                <Link to="/airplanes">Airplanes</Link>
-              </li>
-              <li>
-                <Link to="/flights">Flights</Link>
-              </li>
-              <li>
-                <Link to="/search">Search</Link>
-              </li>
+              {links}
             </ul>
           </nav>
 
@@ -47,15 +40,41 @@ class Nav extends Component {
             <Route path="/Flights">
               <Flights />
             </Route>
-            <Route path="/Flight">
-              <Flight />
-            </Route>
             <Route path="/">
-              <div> Home Page </div>
+              <div>Home Page</div>
             </Route>
           </Switch>
         </div>
       </Router>
+    );
+  }
+}
+
+function navLinks(isAdmin, name='User') {
+  if (isAdmin) {
+    return (
+      <>
+        <li>
+          <Link to="/airplanes">Airplanes</Link>
+        </li>
+        <li>
+          <Link to="/flights">Flights</Link>
+        </li>
+        <li>
+          Admin
+        </li>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <li>
+          <Link to="/search">Search</Link>
+        </li>
+        <li>
+          {name}
+        </li>
+      </>
     );
   }
 }

@@ -1,19 +1,31 @@
 import React, {Component} from 'react';
 
 import Nav from './Nav';
-import Flight from './Flight';
-import Flights from './Flights';
-import Plane from './Plane';
-import Reservations from './Reservations';
-import Search from './Search';
-
 class BurningAirlines extends Component {
+
+  // Load this from the Rails App with a login form
+  state = {
+    loggedIn: true,
+    firstName: 'Test',
+    lastName: 'User',
+    isAdmin: true
+  };
+
   render() {
-    return (
-      <div>
-        <Nav/>
-      </div>
-    )
+    if(this.state.loggedIn) {
+      return (
+        <div>
+          <Nav isAdmin={this.state.isAdmin} firstName={this.state.firstName}/>
+        </div>
+      )
+    }
+    else {
+      return (
+        <div>
+          Login page goes here
+        </div>
+      )
+    }
   }
 }
 
