@@ -10,6 +10,7 @@ import Airplanes from './Airplanes.jsx';
 import Reservations from './Reservations.jsx';
 import Flights from './Flights.jsx';
 import Flight from './Flight.jsx';
+import Search from './Search.jsx';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
             <li>
               <Link to="/reservations">Reservations</Link>
             </li>
+            <li>
+              <Link to="/search">Search</Link>
+            </li>
           </ul>
         </nav>
         <Switch>
@@ -37,8 +41,12 @@ function App() {
           </Route>
           <Route path="/Flights">
             <Flights />
-            <Route path="/Flight">
+          </Route>
+          <Route path="/Flight">
             <Flight />
+          </Route>
+          <Route path="/Search">
+            <Search />
           </Route>
           <Route path="/">
             <div> Home Page </div>
