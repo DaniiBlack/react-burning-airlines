@@ -11,6 +11,7 @@ import Flights from './Flights.jsx';
 import Flight from './Flight.jsx';
 import Search from './Search.jsx';
 import Nav from './Nav.jsx';
+import Plane from './Plane.jsx';
 
 function App() {
   return (
