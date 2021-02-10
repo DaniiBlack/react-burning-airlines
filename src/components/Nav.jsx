@@ -14,7 +14,6 @@ import Search from './Search.jsx';
 
 class Nav extends Component {
   render() {
-    const links = navLinks(this.props.isAdmin, this.props.firstName);
     return (
       <Router>
         <div className="App">
@@ -23,35 +22,34 @@ class Nav extends Component {
               <li>
                 <Link to="/">Home</Link>
               </li>
-              {links}
+              <Links isAdmin={this.props.isAdmin} name={this.props.firstName}/>
             </ul>
           </nav>
-
-          <Switch>
-            <Route path="/Search">
-              <Search />
-            </Route>
-            <Route path="/Airplanes">
-              <Airplanes />
-            </Route>
-            <Route path="/Reservations">
-              <Reservations />
-            </Route>
-            <Route path="/Flights">
-              <Flights />
-            </Route>
-            <Route path="/">
-              <div>Home Page</div>
-            </Route>
-          </Switch>
         </div>
+        <Switch>
+          <Route path="/Search">
+            <Search />
+          </Route>
+          <Route path="/Airplanes">
+            <Airplanes />
+          </Route>
+          <Route path="/Reservations">
+            <Reservations />
+          </Route>
+          <Route path="/Flights">
+            <Flights />
+          </Route>
+          <Route path="/">
+            <div> Home Page</div>
+          </Route>
+        </Switch>
       </Router>
     );
   }
 }
 
-function navLinks(isAdmin, name='User') {
-  if (isAdmin) {
+const Links = (props) => {
+  if (props.isAdmin) {
     return (
       <>
         <li>
@@ -72,7 +70,7 @@ function navLinks(isAdmin, name='User') {
           <Link to="/search">Search</Link>
         </li>
         <li>
-          {name}
+          {props.firstName || 'User'}
         </li>
       </>
     );
