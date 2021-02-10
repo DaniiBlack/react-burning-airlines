@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import '../css/app.css';
 import Airplanes from './Airplanes.jsx';
@@ -11,28 +10,17 @@ import Reservations from './Reservations.jsx';
 import Flights from './Flights.jsx';
 import Flight from './Flight.jsx';
 import Search from './Search.jsx';
+import Nav from './Nav.jsx';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <nav className="App-nav">
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/airplanes">Airplanes</Link>
-            </li>
-            <li>
-              <Link to="/reservations">Reservations</Link>
-            </li>
-            <li>
-              <Link to="/search">Search</Link>
-            </li>
-          </ul>
-        </nav>
+        <Nav />
         <Switch>
+          <Route path="/Search">
+            <Search />
+          </Route>
           <Route path="/Airplanes">
             <Airplanes />
           </Route>
@@ -44,9 +32,6 @@ function App() {
           </Route>
           <Route path="/Flight">
             <Flight />
-          </Route>
-          <Route path="/Search">
-            <Search />
           </Route>
           <Route path="/">
             <div> Home Page </div>
