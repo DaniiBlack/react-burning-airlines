@@ -1,9 +1,9 @@
 import React from "react";
 
-function Airplane() {
+function Airplanes() {
   return (
       <div>Airplanes Page</div>
   );
 }
 
-export default Airplane;
+export default Airplanes;

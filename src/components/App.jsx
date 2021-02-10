@@ -8,6 +8,7 @@ import {
 import '../css/app.css';
 import Airplanes from './Airplanes.jsx';
 import Reservations from './Reservations.jsx';
+import Flights from './Flights.jsx';
 
 function App() {
   return (
@@ -27,11 +28,14 @@ function App() {
           </ul>
         </nav>
         <Switch>
-          <Route path="/airplanes">
+          <Route path="/Airplanes">
             <Airplanes />
           </Route>
           <Route path="/Reservations">
             <Reservations />
+          </Route>
+          <Route path="/Flights">
+            <Flights />
           </Route>
           <Route path="/">
             <div> Home Page </div>
