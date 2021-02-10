@@ -1,8 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
+
+import Airplanes from './Airplanes.jsx';
+import Reservations from './Reservations.jsx';
+import Flights from './Flights.jsx';
+import Flight from './Flight.jsx';
+import Search from './Search.jsx';
 
 function Nav() {
-    return(
+  return(
+    <Router>
+      <div className="App">
         <nav className="App-nav">
             <ul>
               <li>
@@ -19,7 +32,30 @@ function Nav() {
               </li>
             </ul>
         </nav>
-    );
+
+        <Switch>
+          <Route path="/Search">
+            <Search />
+          </Route>
+          <Route path="/Airplanes">
+            <Airplanes />
+          </Route>
+          <Route path="/Reservations">
+            <Reservations />
+          </Route>
+          <Route path="/Flights">
+            <Flights />
+          </Route>
+          <Route path="/Flight">
+            <Flight />
+          </Route>
+          <Route path="/">
+            <div> Home Page </div>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
 }
 
 export default Nav;
