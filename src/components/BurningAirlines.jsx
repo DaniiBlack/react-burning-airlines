@@ -8,7 +8,7 @@ class BurningAirlines extends Component {
     loggedIn: true,
     firstName: 'Test',
     lastName: 'User',
-    isAdmin: true
+    isAdmin: false
   };
 
   render() {
