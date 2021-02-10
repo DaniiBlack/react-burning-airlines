@@ -9,6 +9,7 @@ import '../css/app.css';
 import Airplanes from './Airplanes.jsx';
 import Reservations from './Reservations.jsx';
 import Flights from './Flights.jsx';
+import Flight from './Flight.jsx';
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
           </Route>
           <Route path="/Flights">
             <Flights />
+            <Route path="/Flight">
+            <Flight />
           </Route>
           <Route path="/">
             <div> Home Page </div>
