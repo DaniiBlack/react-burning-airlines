@@ -5,10 +5,10 @@ class BurningAirlines extends Component {
 
   // Load this from the Rails App with a login form
   state = {
-    loggedIn: true,
+    loggedIn: false,
     firstName: 'Test',
     lastName: 'User',
-    isAdmin: true
+    isAdmin: false
   };
 
   render() {

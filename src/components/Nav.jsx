@@ -30,9 +30,11 @@ class Nav extends Component {
                   <Link to="/flights">Flights</Link>
                 </li>
                 <li>
+                  <Link to="/search">Search</Link>
+                </li>
+                <li>
                   Admin
                 </li>
-
               </ul>
             </nav>
 
