@@ -14,6 +14,7 @@ import Search from './Search.jsx';
 
 class Nav extends Component {
   render() {
+    const links = this.props.isAdmin ? adminLinks() : userLinks(this.props.firstName);
     return (
       <Router>
         <div className="App">
@@ -22,7 +23,7 @@ class Nav extends Component {
               <li>
                 <Link to="/">Home</Link>
               </li>
-              <Links isAdmin={this.props.isAdmin} name={this.props.firstName}/>
+              {links}
             </ul>
           </nav>
         </div>
@@ -48,33 +49,33 @@ class Nav extends Component {
   }
 }
 
-const Links = (props) => {
-  if (props.isAdmin) {
-    return (
-      <>
-        <li>
-          <Link to="/airplanes">Airplanes</Link>
-        </li>
-        <li>
-          <Link to="/flights">Flights</Link>
-        </li>
-        <li clasName="admin-nav">
-          Admin
-        </li>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <li>
-          <Link to="/search">Search</Link>
-        </li>
-        <li>
-          {props.firstName || 'User'}
-        </li>
-      </>
-    );
-  }
+function adminLinks() {
+  return (
+    <>
+      <li>
+        <Link to="/airplanes">Airplanes</Link>
+      </li>
+      <li>
+        <Link to="/flights">Flights</Link>
+      </li>
+      <li>
+        Admin
+      </li>
+    </>
+  );
+}
+
+function userLinks(name) {
+  return (
+    <>
+      <li>
+        <Link to="/search">Search</Link>
+      </li>
+      <li>
+        {name}
+      </li>
+    </>
+  );
 }
 
 export default Nav;
