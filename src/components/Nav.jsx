@@ -58,7 +58,7 @@ const Links = (props) => {
         <li>
           <Link to="/flights">Flights</Link>
         </li>
-        <li>
+        <li clasName="admin-nav">
           Admin
         </li>
       </>

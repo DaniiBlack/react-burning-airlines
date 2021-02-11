@@ -1,10 +1,11 @@
 import React from "react";
 import axios from 'axios';
 import Plane from './Plane';
+import Heading from './Heading';
 
 class Airplanes extends React.Component {
   state = {
-    airplanes: [{ name:"747", rows:30, columns:5 }], 
+    airplanes: [{ name:"747", rows:30, columns:5 }],
     name: "",
     rows: 0,
     columns: 0
@@ -33,6 +34,7 @@ class Airplanes extends React.Component {
   render() {
     return (
       <div>
+        <Heading/>
         <form onSubmit={this.handleCreate}>
           <label>
             Name:
