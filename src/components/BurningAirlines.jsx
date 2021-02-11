@@ -34,8 +34,8 @@ class BurningAirlines extends Component {
     event.preventDefault();
     // Convert this to AXIOS post to login then set state on response
     this.setState({
-      firstName: this.state.userName, 
-      loggedIn: true, 
+      firstName: this.state.userName,
+      loggedIn: true,
       isAdmin: this.state.isAdminCheck
     });
   };
